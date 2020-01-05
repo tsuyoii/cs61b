@@ -1,4 +1,3 @@
-
 public class Palindrome {
     //实现用Deque队列来顺序展示字符串word中的字符的签名
     public Deque<Character> wordToDeque(String word){
@@ -8,5 +7,26 @@ public class Palindrome {
             wordList.addLast(word.charAt(i));
         }
         return wordList;
+    }
+
+    //具有带有签名的第二种方法
+    //判断给定字符串是否是回文
+    /**法一
+    public boolean isPalindrome(String Word){
+        for(int i=0;i<(Word.length()/2);i++){
+            if(Word.charAt(i)!=Word.charAt(Word.length()-i))
+                return false;
+        }
+        return true;
+    }
+     **/
+    //判断回文法二
+    public boolean isPalindrome(String word){
+        Deque<Character> wordList = wordToDeque(word);
+        for(int i=0;i<wordList.size();i++){
+            if(wordList.removeFirst()!=wordList.removeLast())
+                return false;
+        }
+        return true;
     }
 }
