@@ -45,6 +45,5 @@ public class testPalindrome {
         assertTrue(palindrome.isPalindrome("ABBA"));
         assertFalse(palindrome.isPalindrome("Aa"));
         assertFalse(palindrome.isPalindrome("ACDC"));
-        assertFalse(palindrome.isPalindrome("yang"));
     }
 }
