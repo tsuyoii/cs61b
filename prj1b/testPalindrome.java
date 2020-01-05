@@ -1,5 +1,6 @@
 import org.junit.Test;
-import static org.junit.Assert.assertEquals;
+
+import static org.junit.Assert.*;
 
 public class testPalindrome {
     /*法一
@@ -33,4 +34,17 @@ public class testPalindrome {
         assertEquals("persiflage", actual);
     }
 
+
+    //回文测试
+    @Test
+    public void testIsPalindrome(){
+        //方法详情参见junit使用文档，网址同上
+        assertTrue(palindrome.isPalindrome(""));
+        assertTrue(palindrome.isPalindrome("a"));
+        assertTrue(palindrome.isPalindrome("AAAaAAA"));
+        assertTrue(palindrome.isPalindrome("ABBA"));
+        assertFalse(palindrome.isPalindrome("Aa"));
+        assertFalse(palindrome.isPalindrome("ACDC"));
+        assertFalse(palindrome.isPalindrome("yang"));
+    }
 }
