@@ -20,11 +20,21 @@ public class Palindrome {
         return true;
     }
      **/
-    //判断回文法二
+    //判断回文法二，狭义回文：一个字符串从前到后与从后到前相同
     public boolean isPalindrome(String word){
         Deque<Character> wordList = wordToDeque(word);
-        for(int i=0;i<wordList.size();i++){
+        for(int i=0;i<wordList.size()-1;i++){
             if(wordList.removeFirst()!=wordList.removeLast())
+                return false;
+        }
+        return true;
+    }
+
+    //使用以下签名添加一个重载的isPalindrome新方法，广义回文：一个字符串从前到后与从后到前依次取相邻或相差N相同
+    public boolean isPalindrome(String word,CharacterComparator cc){
+        Deque<Character> wordList = wordToDeque(word);
+        for(int i=0;i<wordList.size()/2;i++){
+            if(!(cc.equalChars(wordList.removeFirst(),wordList.removeLast())))
                 return false;
         }
         return true;
