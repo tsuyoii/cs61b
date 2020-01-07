@@ -45,5 +45,22 @@ public class testPalindrome {
         assertTrue(palindrome.isPalindrome("ABBA"));
         assertFalse(palindrome.isPalindrome("Aa"));
         assertFalse(palindrome.isPalindrome("ACDC"));
+        assertFalse(palindrome.isPalindrome("yang"));
+    }
+
+    //广义回文测试
+    @Test
+    public void testIsPalindromeCC(){
+        OffByOne offbyone = new OffByOne();
+        assertTrue(palindrome.isPalindrome("",offbyone));
+        assertTrue(palindrome.isPalindrome("a", offbyone));
+        assertTrue(palindrome.isPalindrome("flake",offbyone));
+        assertTrue(palindrome.isPalindrome("zyzy", offbyone));
+        assertTrue(palindrome.isPalindrome("yyxz", offbyone));
+        assertTrue(palindrome.isPalindrome("yyyxz", offbyone));
+        assertFalse(palindrome.isPalindrome("aa", offbyone));
+        assertFalse(palindrome.isPalindrome("xyz", offbyone));
+        assertFalse(palindrome.isPalindrome("aa", offbyone));
+        assertFalse(palindrome.isPalindrome("zxzx", offbyone));
     }
 }
